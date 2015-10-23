@@ -16,11 +16,13 @@ public class BubbleSort {
     private void sort(int[] arrToSort) {
         if (arrToSort.length > 1) {
             int buff = 0;
-            for (int i = 0; i < arrToSort.length-1; i++) {
-                if (arrToSort[i] > arrToSort[i+1]) {
-                    buff = arrToSort[i];
-                    arrToSort[i] = arrToSort[i+1];
-                    arrToSort[i+1] = buff;
+            for (int j = 0; j < arrToSort.length; j ++) {
+                for (int i = 0; i < arrToSort.length - 1; i++) {
+                    if (arrToSort[i] > arrToSort[i + 1]) {
+                        buff = arrToSort[i];
+                        arrToSort[i] = arrToSort[i + 1];
+                        arrToSort[i + 1] = buff;
+                    }
                 }
             }
         }
