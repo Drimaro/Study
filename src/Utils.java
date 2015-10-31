@@ -14,4 +14,13 @@ public class Utils {
 
         return result;
     }
+
+    public static boolean checkSort(int[] sortedArray) {
+        for(int i = 0; i < sortedArray.length - 1; i++) {
+            if (sortedArray[i] > sortedArray[i+1]) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
