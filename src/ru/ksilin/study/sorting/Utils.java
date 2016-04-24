@@ -1,3 +1,5 @@
+package ru.ksilin.study.sorting;
+
 import java.util.Random;
 
 /**
