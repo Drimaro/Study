@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 /**
- * Created by Drimaro on 23.04.2016.
+ * Created by konstantin.silin on 23.04.2016.
  */
 public class MethodRef {
 

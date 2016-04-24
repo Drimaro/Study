@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
- * Created by Drimaro on 16.04.2016.
+ * Created by konstantin.silin on 16.04.2016.
  */
 public class ChainedComparator implements Comparator<ChainedComparator.CompareTest> {
     @Override
