@@ -1,0 +1,14 @@
+{
+  "_id" : 987987987,
+  "name" : "test entity",
+  "subEntities" : [
+    {
+      "_id" : 45687951,
+      "name" : "test sub entity 1"
+    },
+    {
+      "_id" : 264684,
+      "name" : "test sub entity 2"
+    }
+  ]
+}

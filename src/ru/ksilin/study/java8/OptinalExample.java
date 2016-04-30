@@ -1,6 +1,8 @@
 package ru.ksilin.study.java8;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * Created by konstantin.silin on 24.04.2016.

@@ -1,6 +1,9 @@
 package ru.ksilin.study.java8;
 
-import java.util.*;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
+import java.util.Random;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -115,8 +118,7 @@ public class CollectionsIn8 {
                 .limit(size)
                 .map(i -> r.ints(r.nextInt(lengthBound), 97, 123)
                             .mapToObj(c -> String.valueOf((char)c))
-                            .collect(StringBuilder::new, StringBuilder::append, StringBuilder::append))
-                .map(StringBuilder::toString).collect(Collectors.toList());
+                            .reduce("", String::concat)).collect(Collectors.toList());
 
     }
 
