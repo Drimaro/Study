@@ -20,6 +20,8 @@ public class OptinalExample {
         System.out.println(o.orElse("test else"));
         System.out.println(o.orElseGet(() -> "test else get"));
         System.out.println(o.orElseThrow(NullPointerException::new));
+        // some streaming example
+        o.map(s -> s.length()).filter(l -> l>4).ifPresent(System.out::println);
         if (o.isPresent()){
             System.out.println(o.get());
         }
