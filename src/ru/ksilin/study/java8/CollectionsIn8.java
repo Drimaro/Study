@@ -114,7 +114,7 @@ public class CollectionsIn8 {
     private static List<String> generateList(int size, int lengthBound){
         Random r = new Random(new Date().getTime());
 
-        return Stream.iterate(0, i -> i++)
+        return Stream.iterate(0, i -> ++i)
                 .limit(size)
                 .map(i -> r.ints(r.nextInt(lengthBound), 97, 123)
                             .mapToObj(c -> String.valueOf((char)c))
@@ -125,7 +125,7 @@ public class CollectionsIn8 {
     private static Map<Integer, Integer> generateMap(int size){
         Random r = new Random(new Date().getTime());
 
-        return Stream.iterate(0, i -> i++)
+        return Stream.iterate(0, i -> ++i)
                 .limit(size)
                 .collect(Collectors.toMap(i -> i, ra -> r.nextInt()));
     }
