@@ -1,5 +1,7 @@
 package ru.ksilin.study.sorting.lafore.chap2
 
+import java.util.*
+
 internal class HighArray(max: Int) {
     private val a: LongArray = LongArray(max)
     private var nElems: Int = 0
@@ -72,9 +74,52 @@ internal class HighArray(max: Int) {
         }
         return max
     }
+
+    fun noDups() {
+        if (nElems == 0) return
+
+        for (i in 0 until nElems) {
+            val currentElement = a[i]
+            if (currentElement == -1L) continue
+            for (j in i+1..nElems) {
+                if (currentElement == a[j]) {
+                    a[j] = -1 // not meaningful value as array only for positive
+                }
+            }
+        }
+        var id = 0
+        var toSet = 0
+        var removed = 0
+        do {
+            if (a[id] == -1L) {
+                removed++
+            } else {
+                a[toSet] = a[id]
+                toSet++
+            }
+            id++
+        } while (id < nElems)
+        nElems -= removed
+    }
 }
 
 fun main(args: Array<String>) {
+    val maxSize = 100            // array size
+    val arr: HighArray                // reference to array
+    arr = HighArray(maxSize) // create the array
+
+    for (i in 0..4) {
+        arr.insert(i.toLong())
+        arr.insert(i.toLong())
+        arr.insert(i.toLong())
+        arr.insert(i.toLong())
+    }
+    arr.display()
+    arr.noDups()
+    arr.display()
+}
+
+fun ex1() {
     val maxSize = 100            // array size
     val arr: HighArray                // reference to array
     arr = HighArray(maxSize) // create the array
