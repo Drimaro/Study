@@ -175,10 +175,9 @@ public class BasicStreams {
         stream = Stream.of(DATA);
         Map<Integer, Long> groupingCount = stream.collect(Collectors.groupingBy(String::length, Collectors.counting()));
         System.out.println(groupingCount);
-        stream = Stream.of("abcd","bbcd", "dbcd","acd");
-        Map<Integer, Optional<Character>> groupingMapping = stream.collect(Collectors.
-                groupingBy(String::length, Collectors.mapping(s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()))));;
-        System.out.println(groupingMapping);
+//        stream = Stream.of("abcd","bbcd", "dbcd","acd");
+//        Map<Integer, Optional<Character>> groupingMapping = stream.collect(Collectors.groupingBy(String::length, Collectors.mapping(s -> s.charAt(0), Collectors.minBy(Comparator.naturalOrder()))));
+//        System.out.println(groupingMapping);
 
         stream = Stream.of(DATA);
         Map<Boolean, List<String>> partitioning = stream.collect(Collectors.partitioningBy(s -> s.length() > 4));
