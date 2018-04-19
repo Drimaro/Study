@@ -7,6 +7,13 @@ fun insertionSort(array: IntArray) {
         return
 
     for (i in 0 until array.size) {
+        val value = array[i]
+        var idx = i
+        while (idx > 0 && value <= array[idx-1]) {
+            array[idx] = array[idx - 1]
+            idx--
+        }
+        array[idx] = value
     }
 }
 
