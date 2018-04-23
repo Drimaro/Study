@@ -1,4 +1,4 @@
-package ru.ksilin.study.hackerrank.warmup
+package ru.ksilin.study.hackerrank.algorithms.warmup
 
 fun main(args: Array<String>) {
     readLine()

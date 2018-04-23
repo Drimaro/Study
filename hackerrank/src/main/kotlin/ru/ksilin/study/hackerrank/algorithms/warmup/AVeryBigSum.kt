@@ -1,4 +1,4 @@
-package ru.ksilin.study.hackerrank.warmup
+package ru.ksilin.study.hackerrank.algorithms.warmup
 
 import java.util.*
 
