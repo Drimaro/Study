@@ -1,4 +1,4 @@
-package ru.ksilin.study.hackerrank.strings
+package ru.ksilin.study.hackerrank.algorithms.strings
 
 fun main(args: Array<String>) {
     val toReduce = readLine()!!
