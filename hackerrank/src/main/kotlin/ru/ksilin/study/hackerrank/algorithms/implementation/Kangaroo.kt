@@ -7,12 +7,6 @@ fun main(args: Array<String>) {
     var x2 = x1V1X2V2[2].trim().toInt()
     val v2 = x1V1X2V2[3].trim().toInt()
 
-    var hasCommon = false
-    while (!(hasCommon || x1 > x2 && v1 > v2 || x2 > x1 && v2 > v1 || x1 != x2 && v1 == v2)) {
-        x1 += v1
-        x2 += v2
-        if (x1 == x2) hasCommon = true
-    }
-
-    if (hasCommon) println("YES") else println("NO")
+    if(v2 >= v1) println("NO")
+    else println(if((x2 - x1) % (v1 - v2) == 0) "YES" else "NO")
 }
