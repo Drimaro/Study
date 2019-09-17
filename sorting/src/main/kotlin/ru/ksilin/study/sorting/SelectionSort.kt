@@ -1,31 +1,28 @@
 package ru.ksilin.study.sorting
 
-import java.util.*
-
-fun selectionSort(array: IntArray) {
-    if (array.isEmpty())
+fun selectionSort(arr: IntArray) {
+    if (arr.isEmpty())
         return
 
-    for (i in 0 until array.size-1) {
-        var min = i
-
-        for (j in i+1 until array.size) {
-            if (array[min] > array[j]) {
-                min = j
+    for (i in arr.indices) {
+        var minIdx = i
+        for (j in i+1..arr.lastIndex) {
+            if (arr[minIdx] > arr[j]) {
+                minIdx = j
             }
         }
 
-        val buf = array[min]
-        array[min] = array[i]
-        array[i] = buf
+        val tmp = arr[minIdx]
+        arr[minIdx] = arr[i]
+        arr[i] = tmp
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val arrToSort = Utils.getRandomIntArray(10)
-    println(Arrays.toString(arrToSort))
+    println(arrToSort.contentToString())
     selectionSort(arrToSort)
-    println(Arrays.toString(arrToSort))
+    println(arrToSort.contentToString())
 
     println("Check sorted array: " + Utils.checkSort(arrToSort))
 }

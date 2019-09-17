@@ -1,27 +1,22 @@
 package ru.ksilin.study.sorting
 
-import java.util.*
-
-fun insertionSort(array: IntArray) {
-    if (array.isEmpty())
-        return
-
-    for (i in 0 until array.size) {
-        val value = array[i]
-        var idx = i
-        while (idx > 0 && value <= array[idx-1]) {
-            array[idx] = array[idx - 1]
-            idx--
+fun insertionSort(arr: IntArray) {
+    for (i in 1..arr.lastIndex) {
+        val tmp = arr[i]
+        var innerIdx = i
+        while (innerIdx > 0 && tmp < arr[innerIdx-1]) {
+            arr[innerIdx] = arr[innerIdx-1]
+            innerIdx--
         }
-        array[idx] = value
+        arr[innerIdx] = tmp
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val arrToSort = Utils.getRandomIntArray(10)
-    println(Arrays.toString(arrToSort))
+    println(arrToSort.contentToString())
     insertionSort(arrToSort)
-    println(Arrays.toString(arrToSort))
+    println(arrToSort.contentToString())
 
     println("Check sorted array: " + Utils.checkSort(arrToSort))
 }

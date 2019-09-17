@@ -55,7 +55,7 @@ internal class HighArray(max: Int) {
             if (a[i] > max)
                 max = a[i]
         }
-        println("Max element = ${max}")
+        println("Max element = $max")
         return max
     }
 
@@ -67,7 +67,7 @@ internal class HighArray(max: Int) {
                 max = a[i]
         }
         if (max > -1) {
-            println("Max element = ${max}")
+            println("Max element = $max")
             delete(max)
         }
         return max
@@ -101,7 +101,7 @@ internal class HighArray(max: Int) {
     }
 }
 
-fun main(args: Array<String>) {
+fun main() {
     val maxSize = 100            // array size
     val arr: HighArray                // reference to array
     arr = HighArray(maxSize) // create the array
