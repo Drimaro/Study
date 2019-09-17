@@ -4,7 +4,7 @@ fun insertionSort(arr: IntArray) {
     for (i in 1..arr.lastIndex) {
         val tmp = arr[i]
         var innerIdx = i
-        while (innerIdx > 0 && tmp < arr[innerIdx-1]) {
+        while (innerIdx > 0 && tmp <= arr[innerIdx-1]) {
             arr[innerIdx] = arr[innerIdx-1]
             innerIdx--
         }
