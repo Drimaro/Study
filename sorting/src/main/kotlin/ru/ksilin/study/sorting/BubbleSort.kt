@@ -1,5 +1,7 @@
 package ru.ksilin.study.sorting
 
+import ru.ksilin.study.sorting.Utils.swap
+
 fun bubbleSort(arr: IntArray) {
     if (arr.isEmpty()) {
         return
@@ -49,12 +51,6 @@ fun oddEvenSort(arr: IntArray) {
             }
         }
     }
-}
-
-fun swap(arr: IntArray, idx1: Int, idx2: Int) {
-    val buf = arr[idx1]
-    arr[idx1] = arr[idx2]
-    arr[idx2] = buf
 }
 
 fun main() {

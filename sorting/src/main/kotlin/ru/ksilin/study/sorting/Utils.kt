@@ -1,14 +1,13 @@
 package ru.ksilin.study.sorting
 
-import java.util.Random
+import kotlin.random.Random
 
 object Utils {
 
     fun getRandomIntArray(capacity: Int): IntArray {
         val result = IntArray(capacity)
-        val rand = Random()
         for (i in result.indices) {
-            result[i] = rand.nextInt()
+            result[i] = Random.nextInt()
         }
 
         return result
@@ -21,5 +20,11 @@ object Utils {
             }
         }
         return true
+    }
+
+    fun swap(arr: IntArray, idx1: Int, idx2: Int) {
+        val buf = arr[idx1]
+        arr[idx1] = arr[idx2]
+        arr[idx2] = buf
     }
 }
