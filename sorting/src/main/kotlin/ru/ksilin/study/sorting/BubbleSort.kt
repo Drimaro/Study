@@ -31,6 +31,26 @@ fun bubbleSortTwoWay(arr: IntArray) {
     }
 }
 
+fun oddEvenSort(arr: IntArray) {
+    var isSorted = false
+    while (!isSorted) {
+        isSorted = true
+        for (i in 0 until arr.lastIndex step 2) {
+            if (arr[i] > arr[i+1]) {
+                swap(arr, i, i+1)
+                isSorted = false
+            }
+        }
+
+        for (i in 1 until arr.lastIndex step 2) {
+            if (arr[i] > arr[i+1]) {
+                swap(arr, i, i+1)
+                isSorted = false
+            }
+        }
+    }
+}
+
 fun swap(arr: IntArray, idx1: Int, idx2: Int) {
     val buf = arr[idx1]
     arr[idx1] = arr[idx2]
@@ -39,31 +59,30 @@ fun swap(arr: IntArray, idx1: Int, idx2: Int) {
 
 fun main() {
 //    checkBubbleSort()
-    checkTwoWayBubbleSort()
+//    checkTwoWayBubbleSort()
+    checkOddEvenSort()
 }
 
-@Suppress("DuplicatedCode")
+fun runSortFunction(sortFunction: (arr: IntArray) -> Unit) {
+    val arrToSort = Utils.getRandomIntArray(10)
+    val clone = arrToSort.clone()
+    println(arrToSort.contentToString())
+    arrToSort.sort()
+    sortFunction(clone)
+    println(arrToSort.contentToString())
+
+    println("Check sorted array: " + Utils.checkSort(arrToSort))
+    println("Are equal result in different methods = ${arrToSort.contentEquals(clone)}")
+}
+
 fun checkTwoWayBubbleSort() {
-    val arrToSort = Utils.getRandomIntArray(10)
-    val clone = arrToSort.clone()
-    println(arrToSort.contentToString())
-    arrToSort.sort()
-    bubbleSortTwoWay(clone)
-    println(arrToSort.contentToString())
-
-    println("Check sorted array: " + Utils.checkSort(arrToSort))
-    println("Are equal result in different methods = ${arrToSort.contentEquals(clone)}")
+    runSortFunction { bubbleSortTwoWay(it) }
 }
 
-@Suppress("DuplicatedCode")
 fun checkBubbleSort() {
-    val arrToSort = Utils.getRandomIntArray(10)
-    val clone = arrToSort.clone()
-    println(arrToSort.contentToString())
-    arrToSort.sort()
-    bubbleSort(clone)
-    println(arrToSort.contentToString())
+    runSortFunction { bubbleSort(it) }
+}
 
-    println("Check sorted array: " + Utils.checkSort(arrToSort))
-    println("Are equal result in different methods = ${arrToSort.contentEquals(clone)}")
+fun checkOddEvenSort() {
+    runSortFunction { oddEvenSort(it) }
 }
