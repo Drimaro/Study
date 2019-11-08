@@ -11,6 +11,7 @@
 
     <modules>
         <module>hackerrank</module>
+        <module>lock-changer</module>
     </modules>
 
     <properties>
